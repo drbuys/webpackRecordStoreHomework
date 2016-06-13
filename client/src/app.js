@@ -32,14 +32,7 @@ var main = function() {
     handleClick();
     };
 
-    // var reset = function() {
-    //     localStorage.clear();
-    //     recordstoreview.render();
-    // }
-
     document.getElementById("button").addEventListener("click", handleClick);
-    document.getElementById("recordform").addEventListener("submit", handleSubmit);
-    // document.getElementById("reset").addEventListener("click", reset);
 
     recordstoreview.render();
 
