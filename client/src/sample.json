@@ -1,0 +1,26 @@
+module.exports = [
+  { "artist": "The Smashing Pumpkins",
+    "title": "Today",
+    "price": 5.50
+  },
+  { "artist": "The Smashing Pumpkins",
+    "title": "Mayonaise",
+    "price": 6.50
+  },
+  { "artist": "The Smashing Pumpkins",
+    "title": "Zero",
+    "price": 5.00
+  },
+  { "artist": "Andrew Kenny",
+    "title": "Church Mouse in the Church House",
+    "price": 4.50
+  },
+  { "artist": "Postal Service",
+    "title": "Such Great Heights",
+    "price": 4.80
+  },
+  { "artist": "Styrofoam",
+    "title": "Misguided",
+    "price": 7.00
+  }
+]
