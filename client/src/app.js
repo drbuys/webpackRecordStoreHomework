@@ -8,15 +8,6 @@ var main = function() {
 
     var Records = JSON.parse(localStorage.getItem("StoreRecords")) || sampleRecords;
 
-    console.log(Records);
-    // var Accs = localStorage.getItem("BankAccounts");
-    // var newAccs = JSON.parse(Accs);
-    // var updateAccounts = []
-    // if(newAccs) {
-    //     updateAccounts = newAccs;
-    // } else {
-    //     updateAccounts = sampleAccounts;
-    // }
     var store = new Store("Zaks Musicarama!", "Edinburgh", Records, 500);
 
     // for(recordData of Records){
@@ -25,19 +16,29 @@ var main = function() {
 
     var recordstoreview = new RecordStoreView(store);
 
-    // var handleClick = function() {
-    //     recordstoreview.store.accountInterest();
-    //     recordstoreview.render();
-    //     var jRecords = JSON.stringify( recordstoreview.store.accounts );
-    //     localStorage.setItem( "StoreRecords", jRecords );
-    // };
+    var handleClick = function(e) {
+        var artistInput = document.getElementById('artistinput');
+        var titleInput = document.getElementById('titleinput');
+        var priceInput = document.getElementById('balanceinput');
+        var newRecord = new Record(artistInput.value, titleInput.value, priceInput.value);
+        recordstoreview.store.addRecord(newRecord);
+        recordstoreview.render();
+        var jRecords = JSON.stringify( recordstoreview.store.records );
+        localStorage.setItem( "StoreRecords", jRecords );
+    };
+
+    var handleSubmit = function( event ) {
+    event.preventDefault();
+    handleClick();
+    };
 
     // var reset = function() {
     //     localStorage.clear();
     //     recordstoreview.render();
     // }
 
-    // document.getElementById("button").addEventListener("click", handleClick);
+    document.getElementById("button").addEventListener("click", handleClick);
+    document.getElementById("recordform").addEventListener("submit", handleSubmit);
     // document.getElementById("reset").addEventListener("click", reset);
 
     recordstoreview.render();
