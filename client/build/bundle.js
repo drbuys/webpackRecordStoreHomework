@@ -63,7 +63,7 @@
 	    // } else {
 	    //     updateAccounts = sampleAccounts;
 	    // }
-	    var store = new Store("Zaks", "Edinburgh", Records, 500);
+	    var store = new Store("Zaks Musicarama!", "Edinburgh", Records, 500);
 	
 	    // for(recordData of Records){
 	    //     store.addRecord(new Record(recordData));
@@ -16694,21 +16694,22 @@
 	    console.log(this.store.city);
 	    };
 	
-	    // this.displayTotalTypeCash = function(type) {
-	    // var total = document.getElementById(type + '-total');
-	    // total.innerText = "Total Business Cash = £" + this.store.totalCash(type);
-	    // };
-	    //
-	    // this.displayAllAccounts = function(type) {
-	    //     var accountList = document.getElementById('accounts');
-	    //     this.clearElement(accountList);
-	    //     for(account of this.store.accounts){
-	    //         var accountListItem = document.createElement('li');
-	    //         accountListItem.innerText = account.owner + ": £" + account.amount;
-	    //         accountList.appendChild(accountListItem);
-	    //     }
-	    // };
-	    //
+	    this.displayStoreBalance = function() {
+	    var storebalance = document.getElementById('storebalance');
+	    storebalance.innerText = "Store Balance: £" + this.store.balance;
+	    console.log(this.store.balance);
+	    };
+	
+	    this.displayAllRecords = function() {
+	        var recordList = document.getElementById('inventory');
+	        this.clearElement(recordList);
+	        for(record of this.store.records){
+	            var recordListItem = document.createElement('li');
+	            recordListItem.innerText = "Artist: " + record.artist + ", Title: " + record.title + ", Price: £" + record.price;
+	            recordList.appendChild(recordListItem);
+	        }
+	    };
+	
 	    // this.displayTypeAccounts = function(type) {
 	    //     var accountList = document.getElementById(type + '-accounts');
 	    //     this.clearElement(accountList);
@@ -16719,15 +16720,17 @@
 	    //     }
 	    // };
 	
-	    // this.clearElement = function(element) {
-	    //     while(element.firstChild) {
-	    //         element.removeChild(element.firstChild);
-	    //     }
-	    // };
+	    this.clearElement = function(element) {
+	        while(element.firstChild) {
+	            element.removeChild(element.firstChild);
+	        }
+	    };
 	
 	    this.render = function() {
 	        this.displayStoreName();
 	        this.displayStoreCity();
+	        this.displayStoreBalance();
+	        this.displayAllRecords();
 	        // this.displayTotalTypeCash('personal');
 	        // this.displayTotalTypeCash('business');
 	        // this.displayAllAccounts();

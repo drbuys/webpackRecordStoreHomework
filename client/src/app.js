@@ -17,7 +17,7 @@ var main = function() {
     // } else {
     //     updateAccounts = sampleAccounts;
     // }
-    var store = new Store("Zaks", "Edinburgh", Records, 500);
+    var store = new Store("Zaks Musicarama!", "Edinburgh", Records, 500);
 
     // for(recordData of Records){
     //     store.addRecord(new Record(recordData));
